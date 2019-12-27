@@ -1,4 +1,4 @@
-#with device.run_commands, we can send multiple commands
+#with device.run_commands, we can send multiple commands EOS NAPALM
 import json
 from napalm import get_network_driver
 driver = get_network_driver('eos')
