@@ -1,0 +1,11 @@
+#with device.run_commands, we can send multiple commands
+import json
+from napalm import get_network_driver
+driver = get_network_driver('eos')
+iosvl2 = driver('172.16.125.99','prabin','prabin')
+iosvl2.open()
+command_gig = ['sh running-config interfaces ethernet 2']
+res = iosvl2.device.run_commands(['configure terminal ','interface ethernet 2','no switchport','ip address 1.1.1.1 255.255.255.0'])
+iosvl2.close()
+res2 = iosvl2.cli(command_gig)
+print res2
